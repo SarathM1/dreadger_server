@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+ <title>Login Form </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/LoginStyle.css') }}" media="screen" type="text/css" />
+
+
+</head>
+
+<body>
+
+  
+
+<div id="login">
+  <div id="triangle"></div>
+    <h1>Log in</h1>
+  <form action=""  method="post">
+    <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}" >
+    <input type="password" placeholder="Password" name="password" value="{{ request.form.password }}">
+    <input type="submit" value="Login" >
+  </form>
+
+{% if error %}
+<p><strong>Error:</strong>{{ error }}</p>
+{% endif %}
+
+</div>
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
