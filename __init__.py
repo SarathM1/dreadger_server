@@ -81,7 +81,11 @@ def login():
 @app.route ("/index", methods=['GET'])
 @login_required
 def home():
-	results = dieselLevel.query.order_by(dieselLevel.mTime.desc()).all()
+	results=None
+	try:
+		results = dieselLevel.query.order_by(dieselLevel.mTime.desc()).all()
+	except Exception as e:
+		pass
 	return render_template('Home.html',results=results)	
 	#return render_template('Home.html',results=results)	
 
